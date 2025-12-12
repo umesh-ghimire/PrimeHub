@@ -29,7 +29,7 @@ class="cursor-pointer relative pb-1 text-black-700 hover:text-gray-700 font-medi
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
-            </button>
+            </button>cart
 
             <a href="#" class="text-black-500 hover:text-gray-700 font-medium">What's New</a>
             <a href="#" class="text-black-500 hover:text-gray-700 font-medium">Shopping</a>
@@ -68,7 +68,7 @@ class="cursor-pointer relative pb-1 text-black-700 hover:text-gray-700 font-medi
             </div>
 
             {{-- Cart --}}
-            <a href="#" class="flex items-center space-x-1 hover:text-gray-700">
+            <a href="{{ route('cart') }}" class="flex items-center space-x-1 hover:text-gray-700">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 7M7 13l-1.293 6.293A1 1 0 007 21h10a1 1 0 001-.707L19 13M10 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z" />
@@ -165,6 +165,5 @@ class="cursor-pointer relative pb-1 text-black-700 hover:text-gray-700 font-medi
         </div>
     </div>
 
-    {{-- Flowbite --}}
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script> --}}
+   
 </nav>
