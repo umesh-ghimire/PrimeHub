@@ -9,7 +9,9 @@ Route::get('/', function () {
 });
 
 //  cart
-Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+Route::get('/cart', [CartController::class, 'cart'])
+    ->middleware('auth')->name('cart');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

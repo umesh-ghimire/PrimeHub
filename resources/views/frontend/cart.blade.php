@@ -29,7 +29,7 @@
 
     <!-- home/cart -->
     <div class="mb-6 text-sm text-gray-500">
-        Home <span class="mx-1">›</span> <span class="text-gray-800">Cart</span>
+       <a href="{{ url('/') }}">Home</a> <span class="mx-1">›</span> <span class="text-gray-800">Cart</span>
     </div>
 
     <h1 class="text-3xl font-bold tracking-wide mb-6">YOUR CART</h1>
