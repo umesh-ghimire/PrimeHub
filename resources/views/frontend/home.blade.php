@@ -30,7 +30,12 @@
         </div>
 
     </div>
+
+    <!-- Main Content Section -->
+
 </section>
+
+
 
 
 </x-frontend-layout>
