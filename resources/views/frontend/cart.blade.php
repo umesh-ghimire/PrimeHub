@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -12,13 +12,13 @@
     <style>
         body { background-color: #f3efe5; }
     </style>
-</head>
+</head> --}}
+<x-frontend-layout>
 <body class="min-h-screen">
 
 <!-- top bar -->
 <div class="bg-emerald-900 text-white text-center text-sm py-2">
-    Sign up and get 25% off to your first order.
-    <a href="#" class="underline font-semibold">Sign Up Now</a>
+Go and purchase our latest products    <a href="#" class="underline font-semibold">Shopping</a>
     <button onclick="this.parentElement.style.display='none'"
             class="absolute right-2 top-1 text-white hover:text-gray-300 font-bold text-lg">
         &times;
@@ -27,10 +27,7 @@
 <!-- main container -->
 <div class="max-w-6xl mx-auto px-4 py-8 bg-[#f9f6ee]">
 
-    <!-- home/cart -->
-    <div class="mb-6 text-sm text-gray-500">
-       <a href="{{ url('/') }}">Home</a> <span class="mx-1">›</span> <span class="text-gray-800">Cart</span>
-    </div>
+
 
     <h1 class="text-3xl font-bold tracking-wide mb-6">YOUR CART</h1>
 
@@ -255,4 +252,5 @@ recalcTotals();
 </script>
 
 </body>
-</html>
+</x-frontend-layout>
+{{-- </html> --}}
