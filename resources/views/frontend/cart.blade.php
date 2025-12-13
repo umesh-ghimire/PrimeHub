@@ -15,15 +15,6 @@
 </head>
 <body class="min-h-screen">
 
-<!-- top bar -->
-<div class="bg-emerald-900 text-white text-center text-sm py-2">
-    Sign up and get 25% off to your first order.
-    <a href="#" class="underline font-semibold">Sign Up Now</a>
-    <button onclick="this.parentElement.style.display='none'"
-            class="absolute right-2 top-1 text-white hover:text-gray-300 font-bold text-lg">
-        &times;
-    </button>
-</div>
 <!-- main container -->
 <div class="max-w-6xl mx-auto px-4 py-8 bg-[#f9f6ee]">
 
@@ -147,12 +138,12 @@
                     <span class="font-bold text-xl">Rs<span id="total">2100</span></span>
                 </div>
             </div>
+<button
+  class="mt-6 w-full rounded-full bg-black text-white py-3 font-semibold flex items-center justify-center gap-2 hover:bg-black/80 transition-colors ">
+  Go to Checkout
+  <span>→</span>
+</button>
 
-            <button
-                class="mt-6 w-full rounded-full bg-black text-white py-3 font-semibold flex items-center justify-center gap-2">
-                Go to Checkout
-                <span>→</span>
-            </button>
         </div>
 
     </div>
@@ -169,14 +160,15 @@
         </div>
 
         <div class="w-full md:w-80 space-y-3">
-            <input
-                type="email"
-                placeholder="Enter your email address"
-                class="w-full rounded-full px-4 py-2 text-sm text-gray-900"
-            >
-            <button class="w-full rounded-full bg-white text-emerald-900 py-2 font-bold text-sm">
+            <a href="/shopping">
+                <button  class="w-full rounded-full bg-white text-emerald-900 py-2 font-bold text-sm
+         text-center block
+         transition-all duration-200
+         hover:text-base">
              connected with us
             </button>
+            </a>
+
         </div>
     </div>
 
