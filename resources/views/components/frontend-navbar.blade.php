@@ -120,7 +120,7 @@
             @auth
             <div class="relative">
                 <button id="accountToggle" data-dropdown-toggle="accountMenu"
-                    class="flex items-center space-x-2 font-medium hover:text-gray-700">
+                    class="cursor-pointer flex items-center space-x-2 font-medium hover:text-gray-700">
                     <i class="fa-solid fa-user"></i>
                     <span>{{ Auth::user()->name }}</span>
                 </button>
