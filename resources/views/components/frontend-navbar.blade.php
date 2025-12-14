@@ -43,7 +43,7 @@
                         
                         {{-- Shoe --}}
                         <a href="#" class="flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 border border-gray-100">
-                            <img src="{{ asset('categories/shoe.png') }}" class="w-10 h-10 rounded-lg object-cover bg-gray-50 p-1">
+                            <img src="{{ asset('images/categories/shoe.png') }}" class="w-10 h-10 rounded-lg object-cover bg-gray-50 p-1">
                             <div>
                                 <p class="font-semibold text-gray-800 text-sm">Shoe</p>
                                 <p class="text-xs text-gray-500">240 Items Available</p>
