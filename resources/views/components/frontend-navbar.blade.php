@@ -106,7 +106,7 @@
         <div class="hidden md:flex items-center space-x-6">
 
             {{-- Cart --}}
-            <a href="{{ route('cart') }}" class="flex items-center space-x-1 hover:text-gray-700">
+            <a href="{{ route('cart') }}" class="flex items-center space-x-1 hover:text-gray-700 font-medium">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span>Cart</span>
             </a>
