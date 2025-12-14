@@ -8,6 +8,7 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
     <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
     <link rel="stylesheet" href="{{asset('fontawesome/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/home_styles.css') }}">
 </head>
 <body>
 
@@ -24,6 +25,7 @@
     <footer>
         <x-frontend-footer/>
     </footer>
+<script src="{{ asset('frontend/js/home_carousel.js') }}"></script>
 
 </body>
 </html>
