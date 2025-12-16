@@ -29,7 +29,7 @@ class="cursor-pointer relative pb-1 text-black-700 hover:text-gray-700 font-medi
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
-            </button>cart
+            </button>
 
             <a href="#" class="text-black-500 hover:text-gray-700 font-medium">What's New</a>
             <a href="#" class="text-black-500 hover:text-gray-700 font-medium">Shopping</a>
@@ -49,32 +49,111 @@ class="cursor-pointer relative pb-1 text-black-700 hover:text-gray-700 font-medi
         {{-- Right Buttons --}}
         <div class="hidden md:flex items-center space-x-6 text-black-500">
 
-            {{-- Account --}}
-            <button id="accountToggle" data-dropdown-toggle="accountMenu"
-                class=" cursor-pointer flex items-center space-x-1 hover:text-gray-700">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M5.121 17.804A10 10 0 1118.88 17.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>Account</span>
-            </button>
-
-            <div id="accountMenu"
-                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
-                <ul class="py-2 text-sm text-gray-700">
-                    <li><a href="{{ route('login') }}" class="block px-4 py-2 hover:bg-gray-100">Login</a></li>
-                    <li><a href="{{ route('register') }}" class="block px-4 py-2 hover:bg-gray-100">Register</a></li>
-                </ul>
-            </div>
-
-            {{-- Cart --}}
-            <a href="{{ route('cart') }}" class="flex items-center space-x-1 hover:text-gray-700">
+             {{-- Cart --}}
+            <a href="{{ route('cart') }}" class="flex items-center space-x-1 text-black-500 hover:text-gray-700 font-medium">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 7M7 13l-1.293 6.293A1 1 0 007 21h10a1 1 0 001-.707L19 13M10 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z" />
                 </svg>
                 <span>Cart</span>
             </a>
+
+            {{-- Account --}}
+            {{-- <button id="accountToggle" data-dropdown-toggle="accountMenu"
+                class=" cursor-pointer flex items-center space-x-1 hover:text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5.121 17.804A10 10 0 1118.88 17.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>Account</span>
+            </button> --}}
+
+             {{-- Auth Buttons --}}
+
+
+{{-- Guest (Not Logged In) --}}
+@guest
+    <a href="{{ route('register') }}"
+       class="text-black-500 hover:text-gray-700 font-medium">
+        SignUp
+    </a>
+
+    <a href="{{ route('login') }}"
+       class="text-black-500 hover:text-gray-700 font-medium">
+        Login
+    </a>
+@endguest
+@auth
+    <div class="relative">
+
+        {{-- Account Button --}}
+        <button id="accountToggle" data-dropdown-toggle="accountMenu"
+            class=" cursor-pointer flex items-center space-x-2 text-black-500 hover:text-gray-700 font-medium focus:outline-none">
+
+           <i class="fa-solid fa-user"></i>
+
+            <span>{{ Auth::user()->name }}</span>
+
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+        </button>
+
+        {{-- Dropdown Menu --}}
+        <div id="accountMenu"
+            class="hidden absolute right-0 mt-3 w-52 bg-white rounded-lg shadow-lg border z-50">
+
+            <ul class="py-2 text-sm text-gray-700">
+
+                <li>
+                    <a href="{{ route('profile.edit') }}"
+                       class="block px-4 py-2 hover:bg-gray-100">
+                        Manage Account
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                       class="block px-4 py-2 hover:bg-gray-100">
+                        Wishlist
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('cart') }}"
+                       class="block px-4 py-2 hover:bg-gray-100">
+                        Cart
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                       class="block px-4 py-2 hover:bg-gray-100">
+                        My Orders
+                    </a>
+                </li>
+
+                <li>
+                    <hr class="my-1">
+                </li>
+
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit"
+                            class="w-full text-left px-4 py-2 text-red-600 hover:bg-red-50">
+                            Logout
+                        </button>
+                    </form>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+@endauth
+
+
+
 
         </div>
 
@@ -165,5 +244,5 @@ class="cursor-pointer relative pb-1 text-black-700 hover:text-gray-700 font-medi
         </div>
     </div>
 
-   
+
 </nav>
