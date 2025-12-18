@@ -254,4 +254,3 @@ recalcTotals();
 
 </body>
 </x-frontend-layout>
-{{-- </html> --}}
