@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Frontend\CartController;
@@ -27,3 +28,5 @@ Route::middleware('auth')->group(function () {
 Route::get('/product-search', [ProductController::class, 'search'])->name('product.search');
 
 require __DIR__.'/auth.php';
+Route::get('auth/facebook', [FacebookController::class, 'redirectToFacebook'])->name('auth.facebook');
+Route::get('auth/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
