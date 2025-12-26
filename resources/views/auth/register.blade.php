@@ -70,7 +70,7 @@
 
                     <!-- Fixed Google & Facebook icons -->
                     <div class="mt-4 grid grid-cols-2 gap-3">
-                        <a href="#" class="flex items-center justify-center gap-2 py-2.5 border rounded-lg hover:bg-gray-50 text-sm font-medium transition">
+                        <a href="{{route('google.redirect')}}" class="flex items-center justify-center gap-2 py-2.5 border rounded-lg hover:bg-gray-50 text-sm font-medium transition">
                             <svg class="w-5 h-5" viewBox="0 0 24 24">
                                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -89,8 +89,8 @@
                     </div>
 
                     <p class="mt-6 text-center text-xs text-gray-500">
-                        By signing up you agree to PrimeHub's 
-                        <a href="#" class="text-emerald-600 hover:underline">Terms</a> & 
+                        By signing up you agree to PrimeHub's
+                        <a href="#" class="text-emerald-600 hover:underline">Terms</a> &
                         <a href="#" class="text-emerald-600 hover:underline">Privacy Policy</a>
                     </p>
                 </div>
