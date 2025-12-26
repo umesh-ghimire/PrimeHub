@@ -12,15 +12,15 @@
         <!-- Left Text -->
         <div class="hero-text space-y-8">
             <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Discover Amazing 
+                Discover Amazing
                 <span class="hero-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-emerald-600">
                     Products & Deals
                 </span>
             </h1>
-            
+
             <p class="hero-description text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl">
-                Shop the latest electronics, fashion, home essentials and more. 
-                <span class="font-semibold text-gray-900">Premium quality</span> at 
+                Shop the latest electronics, fashion, home essentials and more.
+                <span class="font-semibold text-gray-900">Premium quality</span> at
                 <span class="font-bold text-green-700">unbeatable prices.</span>
             </p>
 
@@ -51,7 +51,7 @@
                         <span class="font-bold text-sm">🔥 30% OFF</span>
                     </div>
                 </div>
-                
+
                 <!-- Floating Card 1 (Smartwatch) -->
                 <div class="hero-floating-card-1 absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 z-10">
                     <div class="hero-card bg-white rounded-2xl shadow-xl p-3 transform rotate-6 hover:rotate-0 transition-transform duration-500">
@@ -60,7 +60,7 @@
                              class="w-full h-full rounded-xl object-cover">
                     </div>
                 </div>
-                
+
                 <!-- Floating Card 2 (Headphones) -->
                 <div class="hero-floating-card-2 absolute -top-6 -right-6 md:-top-10 md:-right-10 z-10">
                     <div class="hero-card bg-white rounded-2xl shadow-xl p-3 transform -rotate-6 hover:rotate-0 transition-transform duration-500">
@@ -117,7 +117,7 @@
                 <h2 class="text-3xl font-bold text-gray-900">Today's Best Deals For You!</h2>
                 <a href="#" class="text-green-900 font-semibold hover:underline hover:text-gray-800 transition-colors duration-300">View All →</a>
             </div>
-            
+
             <!-- First Row - 4 Products -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 @php
@@ -172,8 +172,8 @@
                             </button>
                         </div>
                         <div class="p-4">
-                            <img src="{{ asset('images/home_images/' . $product['image']) }}" 
-                                 alt="{{ $product['name'] }}" 
+                            <img src="{{ asset('images/home_images/' . $product['image']) }}"
+                                 alt="{{ $product['name'] }}"
                                  class="w-full h-48 object-contain mb-4 group-hover:scale-105 transition-transform duration-500">
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="font-semibold text-gray-800 group-hover:text-green-900 transition-colors duration-300">{{ $product['name'] }}</h3>
@@ -261,8 +261,8 @@
                             </button>
                         </div>
                         <div class="p-4">
-                            <img src="{{ asset('images/home_images/' . $product['image']) }}" 
-                                 alt="{{ $product['name'] }}" 
+                            <img src="{{ asset('images/home_images/' . $product['image']) }}"
+                                 alt="{{ $product['name'] }}"
                                  class="w-full h-48 object-contain mb-4 group-hover:scale-105 transition-transform duration-500">
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="font-semibold text-gray-800 group-hover:text-green-900 transition-colors duration-300">{{ $product['name'] }}</h3>
@@ -315,11 +315,11 @@
                     ['name' => 'Nike', 'image' => 'nike.png']
                 ];
                 @endphp
-                
+
                 @foreach($brands as $brand)
                 <div class="bg-white rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 border border-gray-100 hover:border-green-200">
                     <div class="w-16 h-16 mx-auto mb-4 bg-gray-50 rounded-full p-3 group-hover:bg-green-50 transition-colors duration-300">
-                        <img src="{{ asset('images/home_images/' . $brand['image']) }}" 
+                        <img src="{{ asset('images/home_images/' . $brand['image']) }}"
                              alt="{{ $brand['name'] }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
                     </div>
                     <h3 class="font-semibold text-gray-800 mb-2 group-hover:text-green-900 transition-colors duration-300">{{ $brand['name'] }}</h3>
@@ -359,7 +359,7 @@
         </div>
     </section>
 
-    
+
     <!-- Section 7: Weekly Popular Products -->
 <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
@@ -367,7 +367,7 @@
             <h2 class="text-3xl font-bold text-gray-900">Weekly Popular Products</h2>
             <a href="#" class="text-green-900 font-semibold hover:underline hover:text-gray-800 transition-colors duration-300">View All →</a>
         </div>
-        
+
         <!-- Horizontal Scrolling Container -->
         <div class="relative">
             <!-- Products Carousel -->
@@ -507,7 +507,7 @@
                                     {{ $product['category'] }}
                                 </span>
                             </div>
-                            
+
                             <!-- Wishlist Button -->
                             <div class="absolute top-4 right-4 z-10">
                                 <button class="text-gray-400 hover:text-red-500 bg-white p-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-110">
@@ -516,21 +516,21 @@
                                     </svg>
                                 </button>
                             </div>
-                            
+
                             <div class="p-4">
                                 <!-- Product Image -->
-                                <img src="{{ asset('images/home_images/' . $product['image']) }}" 
-                                     alt="{{ $product['name'] }}" 
+                                <img src="{{ asset('images/home_images/' . $product['image']) }}"
+                                     alt="{{ $product['name'] }}"
                                      class="w-full h-48 object-contain mb-4 group-hover:scale-105 transition-transform duration-500">
-                                
+
                                 <!-- Product Info -->
                                 <div class="flex justify-between items-start mb-2">
                                     <h3 class="font-semibold text-gray-800 group-hover:text-green-900 transition-colors duration-300">{{ $product['name'] }}</h3>
                                 </div>
-                                
+
                                 <!-- Description -->
                                 <p class="text-gray-600 text-sm mb-3 line-clamp-2">{{ $product['desc'] }}</p>
-                                
+
                                 <!-- Rating -->
                                 <div class="flex items-center mb-4">
                                     <div class="flex text-yellow-400">
@@ -548,7 +548,7 @@
                                     </div>
                                     <span class="ml-2 text-gray-600 text-sm">{{ $product['rating'] }} • {{ $product['reviews'] }} reviews</span>
                                 </div>
-                                
+
                                 <!-- Price and Add to Cart -->
                                 <div class="flex justify-between items-center">
                                     <div>
@@ -570,7 +570,7 @@
                 </div>
                 @endforeach
             </div>
-            
+
             <!-- Scroll Indicator Dots -->
             <div class="flex justify-center gap-2 mt-6">
                 @for($i = 0; $i < ceil(count($weeklyProducts) / 4); $i++)
@@ -601,7 +601,7 @@
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-gray-900 mb-10">Today's Best Deals for you!</h2>
-            
+
             <!-- Tabs Navigation -->
             <div class="border-b border-gray-200 mb-8">
                 <div class="flex flex-wrap gap-4">
@@ -671,7 +671,7 @@
                             </span>
                         </div>
                         @endif
-                        
+
                         <!-- Wishlist Button -->
                         <div class="absolute top-4 right-4 z-10">
                             <button class="text-gray-400 hover:text-red-500 bg-white p-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-110">
@@ -680,19 +680,19 @@
                                 </svg>
                             </button>
                         </div>
-                        
+
                         <!-- Product Image -->
                         <div class="p-4">
-                            <img src="{{ asset('images/home_images/' . $product['image']) }}" 
-                                 alt="{{ $product['name'] }}" 
+                            <img src="{{ asset('images/home_images/' . $product['image']) }}"
+                                 alt="{{ $product['name'] }}"
                                  class="w-full h-48 object-contain mb-4 group-hover:scale-105 transition-transform duration-500">
-                            
+
                             <!-- Product Info -->
                             <h3 class="font-semibold text-gray-800 mb-2 group-hover:text-green-900 transition-colors duration-300">
                                 {{ $product['name'] }}
                             </h3>
                             <p class="text-gray-600 text-sm mb-3">{{ $product['desc'] }}</p>
-                            
+
                             <!-- Rating -->
                             <div class="flex items-center mb-4">
                                 <div class="flex text-yellow-400">
@@ -712,7 +712,7 @@
                                     {{ $product['rating'] }} • {{ $product['reviews'] }} reviews
                                 </span>
                             </div>
-                            
+
                             <!-- Price and Add to Cart -->
                             <div class="flex justify-between items-center">
                                 <div>
@@ -747,7 +747,7 @@
                 <h2 class="text-3xl font-bold text-gray-900">Most Selling Products</h2>
                 <a href="#" class="text-green-900 font-semibold hover:underline hover:text-gray-800 transition-colors duration-300">View All →</a>
             </div>
-            
+
             <!-- Products Grid (Carousel-style) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 @php
@@ -798,22 +798,22 @@
                                 </svg>
                             </button>
                         </div>
-                        
+
                         <div class="p-4">
                             <!-- Product Image -->
-                            <img src="{{ asset('images/home_images/' . $product['image']) }}" 
-                                 alt="{{ $product['name'] }}" 
+                            <img src="{{ asset('images/home_images/' . $product['image']) }}"
+                                 alt="{{ $product['name'] }}"
                                  class="w-full h-48 object-contain mb-4 group-hover:scale-105 transition-transform duration-500">
-                            
+
                             <!-- Product Info -->
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="font-semibold text-gray-800 group-hover:text-green-900 transition-colors duration-300">{{ $product['name'] }}</h3>
                                 <span class="text-lg font-bold text-gray-900 group-hover:text-green-900 transition-colors duration-300">{{ $product['price'] }}</span>
                             </div>
-                            
+
                             <!-- Description -->
                             <p class="text-gray-600 text-sm mb-3">{{ $product['desc'] }}</p>
-                            
+
                             <!-- Rating -->
                             <div class="flex items-center mb-4">
                                 <div class="flex text-yellow-400">
@@ -825,7 +825,7 @@
                                 </div>
                                 <span class="ml-2 text-gray-600 text-sm">({{ $product['reviews'] }})</span>
                             </div>
-                            
+
                             <!-- Add to Cart Button -->
                             <button class="cart-btn-unified w-full">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -845,23 +845,23 @@
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">Trending Products for you!</h2>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Trending Product 1 -->
                 <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group hover:-translate-y-2">
                     <div class="flex flex-col md:flex-row">
                         <!-- Product Image -->
                         <div class="md:w-2/5 p-8">
-                            <img src="{{ asset('images/home_images/furniture-village.jpg') }}" 
-                                 alt="Furniture Village" 
+                            <img src="{{ asset('images/home_images/furniture-village.jpg') }}"
+                                 alt="Furniture Village"
                                  class="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-700">
                         </div>
-                        
+
                         <!-- Product Content -->
                         <div class="md:w-3/5 p-8 flex flex-col justify-center">
                             <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-900 transition-colors duration-300">Furniture Village</h3>
                             <p class="text-gray-600 mb-6">Premium furniture collection with modern designs and premium materials</p>
-                            
+
                             <!-- Features -->
                             <div class="flex items-center gap-4 mb-8">
                                 <div class="flex items-center gap-2">
@@ -877,7 +877,7 @@
                                     <span class="text-sm text-gray-700">Delivery within 24 hours</span>
                                 </div>
                             </div>
-                            
+
                             <!-- Add to Cart Button -->
                             <button class="cart-btn-unified">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -894,16 +894,16 @@
                     <div class="flex flex-col md:flex-row">
                         <!-- Product Image -->
                         <div class="md:w-2/5 p-8">
-                            <img src="{{ asset('images/home_images/fashion-world.jpg') }}" 
-                                 alt="Fashion World" 
+                            <img src="{{ asset('images/home_images/fashion-world.jpg') }}"
+                                 alt="Fashion World"
                                  class="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-700">
                         </div>
-                        
+
                         <!-- Product Content -->
                         <div class="md:w-3/5 p-8 flex flex-col justify-center">
                             <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-900 transition-colors duration-300">Fashion World</h3>
                             <p class="text-gray-600 mb-6">Latest fashion trends and premium clothing collections for all seasons</p>
-                            
+
                             <!-- Features -->
                             <div class="flex items-center gap-4 mb-8">
                                 <div class="flex items-center gap-2">
@@ -919,7 +919,7 @@
                                     <span class="text-sm text-gray-700">Delivery within 24 hours</span>
                                 </div>
                             </div>
-                            
+
                             <!-- Add to Cart Button -->
                             <button class="cart-btn-unified">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -938,7 +938,7 @@
     <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">Best Selling Store</h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 @php
                 $stores = [
@@ -977,29 +977,29 @@
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group hover:-translate-y-2">
                     <!-- Store Banner -->
                     <div class="relative h-48 overflow-hidden">
-                        <img src="{{ asset('images/home_images/' . $store['image']) }}" 
-                             alt="{{ $store['name'] }}" 
+                        <img src="{{ asset('images/home_images/' . $store['image']) }}"
+                             alt="{{ $store['name'] }}"
                              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                        
+
                         <!-- Store Logo -->
                         <div class="absolute -bottom-8 left-6">
                             <div class="w-16 h-16 bg-white rounded-full p-1 shadow-lg">
-                                <img src="{{ asset('images/home_images/' . $store['logo']) }}" 
-                                     alt="{{ $store['name'] }} Logo" 
+                                <img src="{{ asset('images/home_images/' . $store['logo']) }}"
+                                     alt="{{ $store['name'] }} Logo"
                                      class="w-full h-full object-cover rounded-full">
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Store Info -->
                     <div class="pt-10 pb-6 px-6">
                         <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-900 transition-colors duration-300">{{ $store['name'] }}</h3>
-                        
+
                         <!-- Categories -->
                         <div class="flex items-center gap-2 mb-4">
                             <span class="text-sm text-gray-600">{{ $store['category'] }}</span>
                         </div>
-                        
+
                         <!-- Delivery Info -->
                         <div class="flex items-center gap-2 mb-6">
                             <svg class="w-5 h-5 text-green-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1007,7 +1007,7 @@
                             </svg>
                             <span class="text-sm text-gray-700">{{ $store['delivery'] }}</span>
                         </div>
-                        
+
                         <!-- Visit Store Button -->
                         <button class="cart-btn-unified w-full">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1026,7 +1026,7 @@
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">Services to help you shop</h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 @php
                 $services = [
@@ -1059,14 +1059,14 @@
                     <div class="p-8">
                         <h3 class="text-xl font-bold {{ $service['textColor'] }} mb-4">{{ $service['title'] }}</h3>
                         <p class="text-gray-600 mb-8">{{ $service['desc'] }}</p>
-                        
+
                         <!-- Service Image -->
                         <div class="relative h-48">
-                            <img src="{{ asset('images/home_images/' . $service['image']) }}" 
-                                 alt="{{ $service['title'] }}" 
+                            <img src="{{ asset('images/home_images/' . $service['image']) }}"
+                                 alt="{{ $service['title'] }}"
                                  class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700">
                         </div>
-                        
+
                         <!-- Learn More Button -->
                         <button class="cart-btn-unified w-full mt-6">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

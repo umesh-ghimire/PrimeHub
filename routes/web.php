@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Frontend\AuthController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +30,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 });
-
+Route::get('/product-search', [ProductController::class, 'search'])->name('product.search');
 
 require __DIR__.'/auth.php';

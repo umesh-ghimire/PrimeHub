@@ -91,16 +91,22 @@
         </div>
 
         {{-- Search --}}
-        <div class="hidden md:flex items-center w-72 relative">
-            <input type="text"
-                class="w-full border rounded-full py-2 pl-4 pr-10 focus:ring-0"
-                placeholder="Search Product">
-            <svg class="absolute right-3 w-5 h-5 text-gray-500" fill="none" stroke="currentColor"
-                viewBox="0 0 24 24">
+        <form action="{{ route('product.search') }}" method="GET">
+    <div class="hidden md:flex items-center w-72 relative">
+        <input type="text"
+            name="query"
+            value="{{ request('query') }}"
+            class="w-full border rounded-full py-2 pl-4 pr-10 focus:ring-0"
+            placeholder="Search Product">
+
+        <button type="submit" class="absolute right-3 focus:outline-none">
+            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
-        </div>
+        </button>
+    </div>
+</form>
 
         {{-- Right Section --}}
         <div class="hidden md:flex items-center space-x-6">
