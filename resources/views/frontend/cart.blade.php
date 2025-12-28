@@ -144,12 +144,12 @@ Go and purchase our latest products    <a href="#" class="underline font-semibol
                     <span class="font-bold text-xl">Rs<span id="total">2100</span></span>
                 </div>
             </div>
+<button
+  class="mt-6 w-full rounded-full bg-black text-white py-3 font-semibold flex items-center justify-center gap-2 hover:bg-black/80 transition-colors ">
+  Go to Checkout
+  <span>→</span>
+</button>
 
-            <button
-                class="mt-6 w-full rounded-full bg-black text-white py-3 font-semibold flex items-center justify-center gap-2">
-                Go to Checkout
-                <span>→</span>
-            </button>
         </div>
 
     </div>
@@ -166,14 +166,15 @@ Go and purchase our latest products    <a href="#" class="underline font-semibol
         </div>
 
         <div class="w-full md:w-80 space-y-3">
-            <input
-                type="email"
-                placeholder="Enter your email address"
-                class="w-full rounded-full px-4 py-2 text-sm text-gray-900"
-            >
-            <button class="w-full rounded-full bg-white text-emerald-900 py-2 font-bold text-sm">
+            <a href="/shopping">
+                <button  class="w-full rounded-full bg-white text-emerald-900 py-2 font-bold text-sm
+         text-center block
+         transition-all duration-200
+         hover:text-base">
              connected with us
             </button>
+            </a>
+
         </div>
     </div>
 
