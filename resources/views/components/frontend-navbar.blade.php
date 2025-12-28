@@ -87,7 +87,7 @@
             </div>
 
             <a href="#" class="font-medium hover:text-gray-700">What's New</a>
-            <a href="#" class="font-medium hover:text-gray-700">Shopping</a>
+            <a href="{{ route('products') }}" class="font-medium hover:text-gray-700">Shopping</a>
         </div>
 
         {{-- Search --}}

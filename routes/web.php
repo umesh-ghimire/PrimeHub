@@ -33,6 +33,11 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/product-search', [ProductController::class, 'search'])->name('product.search');
 
+Route::get('/products', function () {
+    return view('frontend.products');
+})->name('products');
+
+
 require __DIR__.'/auth.php';
 Route::get('auth/facebook', [FacebookController::class, 'redirectToFacebook'])->name('auth.facebook');
 Route::get('auth/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
