@@ -24,5 +24,9 @@ Route::middleware('auth')->group(function () {
 
 });
 
+Route::get('/products', function () {
+    return view('frontend.products'); 
+})->name('products');
+
 
 require __DIR__.'/auth.php';
