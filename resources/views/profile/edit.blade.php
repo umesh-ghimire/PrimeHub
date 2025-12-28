@@ -101,86 +101,105 @@
                                 @endif
                             </form>
                         </div>
+| @if(auth()->user()->provider === 'google')
+    {{-- Google user: No current password needed --}}
+@else
+    {{-- Manual user: All fields + Forgot Password link --}}
+@endif
 
-                        <!-- Divider -->
-                        <hr class="my-16 border-t border-white/30">
+<hr class="my-16 border-t border-white/30">
 
-                        <!-- ===================== UPDATE PASSWORD ===================== -->
-                        <div class="mb-16">
-                            <div class="text-center mb-10">
-                                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl shadow-xl ring-4 ring-emerald-300/30">
-                                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                                    </svg>
-                                </div>
-                                <h2 class="mt-5 text-2xl font-bold text-gray-900">Update Password</h2>
-                                <p class="mt-1 text-base text-gray-600">Use a strong, unique password for better security</p>
-                            </div>
+<!-- ===================== UPDATE PASSWORD ===================== -->
+<div class="mb-16">
+    <div class="text-center mb-10">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl shadow-xl ring-4 ring-emerald-300/30">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+        </div>
+        <h2 class="mt-5 text-2xl font-bold text-gray-900">Update Password</h2>
+        <p class="mt-1 text-base text-gray-600">Use a strong, unique password for better security</p>
+    </div>
 
-                            <form method="post" action="{{ route('password.update') }}" class="space-y-8">
-                                @csrf
-                                @method('put')
+    <form method="post" action="{{ route('password.update') }}" class="space-y-8">
+        @csrf
+        @method('put')
 
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                    <div class="group">
-                                        <x-input-label for="current_password" value="Current Password" class="text-base font-semibold text-gray-800" />
-                                        <x-text-input
-                                            id="current_password"
-                                            name="current_password"
-                                            type="password"
-                                            class="mt-2 block w-full h-14 px-6 rounded-2xl bg-white/70 border border-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-400/50 focus:bg-white focus:border-emerald-400 focus:shadow-xl transition-all"
-                                            autocomplete="current-password"
-                                            placeholder="••••••••"
-                                        />
-                                        <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2 text-sm text-red-500" />
-                                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            @if(auth()->user()->provider !== 'google')
+                <!-- Current Password - only for manual users -->
+                <div class="group">
+                    <x-input-label for="current_password" value="Current Password" class="text-base font-semibold text-gray-800" />
+                    <x-text-input
+                        id="current_password"
+                        name="current_password"
+                        type="password"
+                        class="mt-2 block w-full h-14 px-6 rounded-2xl bg-white/70 border border-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-400/50 focus:bg-white focus:border-emerald-400 focus:shadow-xl transition-all"
+                        autocomplete="current-password"
+                        placeholder="••••••••"
+                    />
+                    <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2 text-sm text-red-500" />
+                </div>
+            @endif
 
-                                    <div class="group">
-                                        <x-input-label for="password" value="New Password" class="text-base font-semibold text-gray-800" />
-                                        <x-text-input
-                                            id="password"
-                                            name="password"
-                                            type="password"
-                                            class="mt-2 block w-full h-14 px-6 rounded-2xl bg-white/70 border border-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-400/50 focus:bg-white focus:border-emerald-400 focus:shadow-xl transition-all"
-                                            autocomplete="new-password"
-                                            placeholder="••••••••"
-                                        />
-                                        <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2 text-sm text-red-500" />
-                                    </div>
+            <!-- New Password -->
+            <div class="group">
+                <x-input-label for="password" value="New Password" class="text-base font-semibold text-gray-800" />
+                <x-text-input
+                    id="password"
+                    name="password"
+                    type="password"
+                    class="mt-2 block w-full h-14 px-6 rounded-2xl bg-white/70 border border-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-400/50 focus:bg-white focus:border-emerald-400 focus:shadow-xl transition-all"
+                    autocomplete="new-password"
+                    placeholder="••••••••"
+                />
+                <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2 text-sm text-red-500" />
+            </div>
 
-                                    <div class="group">
-                                        <x-input-label for="password_confirmation" value="Confirm New Password" class="text-base font-semibold text-gray-800" />
-                                        <x-text-input
-                                            id="password_confirmation"
-                                            name="password_confirmation"
-                                            type="password"
-                                            class="mt-2 block w-full h-14 px-6 rounded-2xl bg-white/70 border border-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-400/50 focus:bg-white focus:border-emerald-400 focus:shadow-xl transition-all"
-                                            autocomplete="new-password"
-                                            placeholder="••••••••"
-                                        />
-                                        <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2 text-sm text-red-500" />
-                                    </div>
-                                </div>
+            <!-- Confirm New Password -->
+            <div class="group">
+                <x-input-label for="password_confirmation" value="Confirm New Password" class="text-base font-semibold text-gray-800" />
+                <x-text-input
+                    id="password_confirmation"
+                    name="password_confirmation"
+                    type="password"
+                    class="mt-2 block w-full h-14 px-6 rounded-2xl bg-white/70 border border-white/50 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-emerald-400/50 focus:bg-white focus:border-emerald-400 focus:shadow-xl transition-all"
+                    autocomplete="new-password"
+                    placeholder="••••••••"
+                />
+                <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2 text-sm text-red-500" />
+            </div>
+        </div>
+          @if(auth()->user()->provider !== 'google')
+    <div class="text-center mt-8">
+        <a href="{{ route('password.forgot.logout.redirect') }}"
+           class="inline-block px-10 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-lg rounded-2xl shadow-xl transition-all hover:scale-105">
+            Forgot your password? Send reset link via email
+        </a>
+    </div>
+   @endif
 
-                                <div class="flex justify-end mt-6">
-                                    <button type="submit"
-                                        class="px-10 py-4 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-700 text-white font-bold text-lg rounded-2xl shadow-xl transition-all hover:scale-105">
-                                        Update Password
-                                    </button>
-                                </div>
+        <div class="flex justify-end mt-6">
+            <button type="submit"
+                class="px-10 py-4 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-700 text-white font-bold text-lg rounded-2xl shadow-xl transition-all hover:scale-105">
+                Update Password
+            </button>
+        </div>
 
-                                @if (session('status') === 'password-updated')
-                                    <p x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 4000)" x-transition
-                                       class="text-center text-xl font-bold text-emerald-600 animate-pulse mt-8">
-                                        Password updated successfully!
-                                    </p>
-                                @endif
-                            </form>
-                        </div>
+        @if (session('status') === 'password-updated')
+            <p x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 4000)" x-transition
+               class="text-center text-xl font-bold text-emerald-600 animate-pulse mt-8">
+                Password updated successfully!
+            </p>
+        @endif
 
-                        <!-- Divider -->
-                        <hr class="my-16 border-t border-white/30">
+    
+    </form>
+</div>
 
+<!-- Divider -->
+<hr class="my-16 border-t border-white/30">
+  
                         <!-- ===================== DELETE ACCOUNT ===================== -->
                         <div>
                             <div class="text-center mb-10">

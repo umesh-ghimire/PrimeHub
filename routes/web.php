@@ -4,6 +4,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,3 +31,17 @@ Route::get('/product-search', [ProductController::class, 'search'])->name('produ
 require __DIR__.'/auth.php';
 Route::get('auth/facebook', [FacebookController::class, 'redirectToFacebook'])->name('auth.facebook');
 Route::get('auth/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
+
+
+
+// Custom "Forgot Password" route: Logs out + redirects to standard forgot-password page
+Route::get('/forgot-password-logout-redirect', function () {
+    Auth::logout();
+    
+    // Invalidate session and regenerate CSRF token for security
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    
+    return redirect()->route('password.request'); // Standard /forgot-password page
+})->middleware('auth') // Only accessible to logged-in users
+  ->name('password.forgot.logout.redirect');
