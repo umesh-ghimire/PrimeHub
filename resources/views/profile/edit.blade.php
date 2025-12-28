@@ -101,13 +101,8 @@
                                 @endif
                             </form>
                         </div>
-| @if(auth()->user()->provider === 'google')
-    {{-- Google user: No current password needed --}}
-@else
-    {{-- Manual user: All fields + Forgot Password link --}}
-@endif
 
-<hr class="my-16 border-t border-white/30">
+                        <hr class="my-16 border-t border-white/30">
 
 <!-- ===================== UPDATE PASSWORD ===================== -->
 <div class="mb-16">
@@ -126,8 +121,8 @@
         @method('put')
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            @if(auth()->user()->provider !== 'google')
-                <!-- Current Password - only for manual users -->
+            <!-- Show Current Password only for manual users -->
+            @if(is_null(auth()->user()->provider))
                 <div class="group">
                     <x-input-label for="current_password" value="Current Password" class="text-base font-semibold text-gray-800" />
                     <x-text-input
@@ -170,18 +165,24 @@
                 <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2 text-sm text-red-500" />
             </div>
         </div>
-          @if(auth()->user()->provider !== 'google')
-    <div class="text-center mt-8">
-        <a href="{{ route('password.forgot.logout.redirect') }}"
-           class="inline-block px-10 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-lg rounded-2xl shadow-xl transition-all hover:scale-105">
-            Forgot your password? Send reset link via email
-        </a>
-    </div>
-   @endif
+
+        <!-- Forgot Password link for manual users only -->
+        @if(is_null(auth()->user()->provider))
+            <div class="text-center mt-8">
+                <a href="{{ route('password.forgot.logout.redirect') }}"
+                   class="inline-block px-10 py-4 bg-gradient-to-r from-emerald-500 to-teal-600
+                          hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-lg
+                          rounded-2xl shadow-xl transition-all hover:scale-105">
+                    Forgot your password? Send reset link via email
+                </a>
+            </div>
+        @endif
 
         <div class="flex justify-end mt-6">
             <button type="submit"
-                class="px-10 py-4 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-700 text-white font-bold text-lg rounded-2xl shadow-xl transition-all hover:scale-105">
+                class="px-10 py-4 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600
+                       hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-700 text-white
+                       font-bold text-lg rounded-2xl shadow-xl transition-all hover:scale-105">
                 Update Password
             </button>
         </div>
@@ -192,10 +193,9 @@
                 Password updated successfully!
             </p>
         @endif
-
-    
     </form>
 </div>
+
 
 <!-- Divider -->
 <hr class="my-16 border-t border-white/30">
