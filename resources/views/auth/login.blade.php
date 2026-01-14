@@ -1,3 +1,4 @@
+<x-frontend-layout>
 <x-guest-layout>
     <div class="w-full max-w-4xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 bg-white rounded-2xl shadow-2xl overflow-hidden">
@@ -48,7 +49,7 @@
                         </div>
 
                         <!-- Password -->
-                        <div>
+                        {{-- <div>
                             <x-input-label for="password" value="Password" class="text-xs font-medium" />
                             <x-text-input
                                 id="password"
@@ -58,10 +59,11 @@
                                 autocomplete="current-password"
                                 class="mt-1 h-10 text-sm rounded-lg w-full"
                             />
-                        </div>
+                        </div> --}}
+
+    <div class="relative mt-1 py-2">
     <x-input-label for="password" value="Password" class="text-xs font-medium" />
 
-    <div class="relative mt-1">
         <x-text-input
             id="password"
             name="password"
@@ -74,8 +76,9 @@
         <button
             type="button"
             onclick="togglePassword()"
-            class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-blue-600"
-        >
+           class="absolute right-3 top-11 -translate-y-1/2 text-gray-500 hover:text-blue-600">
+
+
             <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -145,3 +148,4 @@
     }
 </script>
 </x-guest-layout>
+</x-frontend-layout>

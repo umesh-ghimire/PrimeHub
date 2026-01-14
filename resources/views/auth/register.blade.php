@@ -1,3 +1,4 @@
+<x-frontend-layout>
 <x-guest-layout>
     <div class="w-full max-w-4xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 bg-white rounded-2xl shadow-2xl overflow-hidden">
@@ -149,3 +150,5 @@
         }
     </script>
 </x-guest-layout>
+</x-frontend-layout>
+

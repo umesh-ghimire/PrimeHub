@@ -1,3 +1,4 @@
+
 <x-guest-layout>
     <div class="w-full max-w-4xl mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 bg-white/70 backdrop-blur-2xl rounded-3xl shadow-2xl ring-1 ring-black/5 overflow-hidden">
@@ -144,3 +145,4 @@
         }
     </script>
 </x-guest-layout>
+
